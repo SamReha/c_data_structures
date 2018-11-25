@@ -1,7 +1,7 @@
 ll_test : ll_test.o
 	gcc -o ll_test ll_test.o -g
 
-ll_test.o : ll_test.c ll.h
+ll_test.o : ll_test.c double_linked_list.h
 	gcc -c ll_test.c -g
 
 clean :
