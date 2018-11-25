@@ -2,9 +2,9 @@
 Simple, header-only implementations of common data structures in C
 
 Includes:
-* Linked List (in progress)
+* Linked List (done-ish)
 * Binary Tree (to do)
-* Resizeable Array (to do)
+* Resizeable Array (in progress)
 * Graph (Matrix and Adjacency List) (in progress)
 * Hash Table (to do)
 
