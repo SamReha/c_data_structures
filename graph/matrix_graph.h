@@ -6,19 +6,21 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#include <double_linked_list.h>
+
 typedef struct {
 	void* data;
-} _Matrix_Node;
+} _Matrix_Graph_Node;
 
 
-_Matrix_Node* new_Matrix_Node(void* data) {
-	_Matrix_Node* self = malloc(sizeof(_Matrix_Node));
+_Matrix_Graph_Node* _matrix_graph_node_new(void* data) {
+	_Matrix_Graph_Node* self = malloc(sizeof(_Matrix_Graph_Node));
 	self->data = data;
 	
 	return self;
 }
 
-_Matrix_Node* free_Matrix_Node(_Matrix_Node* m_n) {
+_Matrix_Graph_Node* _matrix_graph_node_free(_Matrix_Graph_Node* m_n) {
 	free(self);
 	
 	return NULL;
@@ -26,15 +28,15 @@ _Matrix_Node* free_Matrix_Node(_Matrix_Node* m_n) {
 
 typedef struct {
 	unsigned long max_size;
-	_Matrix_Node* nodes;
+	_Matrix_Graph_Node* nodes;
 	bool** edges;
 } Matrix_Graph;
 
-MatrixGraph* new_Matrix_Graph(unsigned int max_size) {
+Matrix_Graph* matrix_graph_new(unsigned int max_size) {
 	MatrixGraph* self = malloc(sizeof(Matrix_Graph));
 	
 	self->max_size = max_size;
-	self->nodes = calloc(max_size, sizeof(_Matrix_Node));
+	self->nodes = calloc(max_size, sizeof(_Matrix_Graph_Node));
 	self->edges = calloc(max_size, sizeof(bool*));
 	
 	for (int i = 0; i < max_size; i++) self->edges[i] = calloc(max_size, sizeof(bool));
@@ -42,7 +44,7 @@ MatrixGraph* new_Matrix_Graph(unsigned int max_size) {
 	return self;
 }
 
-void* free_Matrix_Graph(Matrix_Graph* self) {
+void* matrix_graph_free(Matrix_Graph* self) {
 	free(self->nodes);
 	
 	for (int i = 0; i < self->max_size; i++) free(self->edges[i]);
