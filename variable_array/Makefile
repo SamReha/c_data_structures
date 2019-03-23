@@ -1,3 +1,5 @@
+include ../incl.mk
+
 unit_test :
 
 
@@ -5,10 +7,10 @@ mem_test :
 
 
 var_array_test : var_array_test.o
-	gcc -o var_array_test var_array_test.o -g
+	$(CC) -o var_array_test var_array_test.o
 
 var_array_test.o : var_array_test.c variable_array.h
-	gcc -c var_array_test.c -g
+	$(CC) -c var_array_test.c
 
 clean :
 	rm var_array_test.o
