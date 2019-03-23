@@ -1,3 +1,6 @@
+# Vim swapfiles
+*.swp
+
 # Prerequisites
 *.d
 
