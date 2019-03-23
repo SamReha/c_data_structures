@@ -1,4 +1,4 @@
-ll_test : ll_test.o
+unit_test : ll_test.o
 	gcc -o ll_test ll_test.o -g
 
 ll_test.o : ll_test.c double_linked_list.h

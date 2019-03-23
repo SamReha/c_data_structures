@@ -1,3 +1,9 @@
+unit_test :
+
+
+mem_test :
+
+
 var_array_test : var_array_test.o
 	gcc -o var_array_test var_array_test.o -g
 
